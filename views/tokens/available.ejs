@@ -21,7 +21,10 @@
     <main>
       <div class="container">
         <h1><%= title %></h1>
-        <p>Welcome to <%= title %></p>
+        <p>Here we have the <%= title %> which we can utilise:</p>
+        <%  Object.keys(tokens).forEach(function (key) { %>
+          <li><%= key %></li>
+        <% }) %>
       </div>
     </main>
 
