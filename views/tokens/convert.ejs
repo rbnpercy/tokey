@@ -21,14 +21,59 @@
     <main>
       <div class="container">
         <h1><%= title %></h1>
-        <p>Here we have the <%= title %> we can utilise.</p>
-        <p> <%= tokens %> </p>
+
+        <form method="post" action="/tokens/convert" novalidate>
+          <div class="form-field">
+            <label for="blockchainType">Blockchain Type</label>
+            <input class="input" id="blockchainType" name="blockchainType" />
+          </div>
+          <div class="form-field">
+            <label for="from_currency_id">fromCurrencyId</label>
+            <input class="input" id="fromCurrencyId" name="fromCurrencyId" value="" />
+          </div>
+          <div class="form-field">
+            <label for="toCurrencyId">toCurrencyId</label>
+            <input class="input" id="toCurrencyId" name="toCurrencyId" value="" />
+          </div>
+          <div class="form-field">
+            <label for="amount">amount</label>
+            <input class="input" id="amount" name="amount" value="" />
+          </div>
+          <div class="form-field">
+            <label for="minimum_return">minimumReturn</label>
+            <input class="input" id="minimumReturn" name="minimumReturn" value="" />
+          </div>
+          <div class="form-field">
+            <label for="owner_address">ownerAddress</label>
+            <input class="input" id="ownerAddress" name="ownerAddress" value="" />
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">Go!</button>
+          </div>
+        </form>
+
+        <br/>
+        <h3>Conversion Params:</h3>
+        <p> <%- output %> </p>
+
+        <form method="post" action="/tokens/convert/submit" novalidate>
+          <div class="form-actions">
+            <button class="btn" type="submit">Get Blockchain Transaction</button>
+          </div>
+        </form>
+
+
+        <hr/>
+        <h3>To Blockchain:</h3>
+        <p class="toBlock"><%- toblock %></p>
+
+
       </div>
     </main>
 
     <footer id="footer">
       <div class="container">
-        <p>&copy; Copyright 2018 - Tokey</p>
+        <p>&copy; Copyright 2018 - <a href="http://twitter.com/rbin">@rbin</a></p>
       </div>
     </footer>
 

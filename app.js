@@ -8,6 +8,8 @@ var sassMiddleware = require('node-sass-middleware');
 var indexRouter = require('./routes/index');
 var tokenRouter = require('./routes/tokens');
 
+var bodyParser = require('body-parser');
+
 var app = express();
 
 // view engine setup
@@ -28,6 +30,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tokens', tokenRouter);
+
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

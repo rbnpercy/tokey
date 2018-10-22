@@ -18,17 +18,34 @@
       </div>
     </header>
 
-    <main>
+    <main id="pricesPage">
       <div class="container">
         <h1><%= title %></h1>
-        <p>Here we have the <%= title %> we can utilise.</p>
-        <p> <%= tokens %> </p>
+        <table id="tokenprices">
+          <tr class="heads">
+            <%  Object.keys(prices).forEach(function (key) { %>
+              <td><%= key %></td>
+            <% }) %>
+          </tr>
+          <tr>
+            <%  Object.values(prices).forEach(function (val) { %>
+              <td><%= val %></td>
+            <% }) %>
+          </tr>
+        </table>
+
+      <hr />
+
+      <p>You are requesting to buy <b><%= prices.name %></b> tokens, using the currency <b><%= prices.displayCurrency %></b>.</p>
+
+      <p>For <b>1</b> <b><%= prices.displayCurrency %></b> token(s), you will receive <b><%= prices.price %></b> <b><%= prices.name %></b> tokens.</p>
+
       </div>
     </main>
 
     <footer id="footer">
       <div class="container">
-        <p>&copy; Copyright 2018 - Tokey</p>
+        <p>&copy; Copyright 2018 - <a href="http://twitter.com/rbin">@rbin</a></p>
       </div>
     </footer>
 

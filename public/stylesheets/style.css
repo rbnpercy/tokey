@@ -28,4 +28,29 @@ main {
 footer {
   margin-top: 100px; }
 
+#tokenprices {
+  width: 100%; }
+  #tokenprices tr.heads {
+    background-color: #c0c0c0;
+    font-weight: bold; }
+
+#pricesPage hr {
+  padding: 0px;
+  border: 1px dashed #00B7FF;
+  width: 70%;
+  margin: 75px auto 50px; }
+
+#pricesPage p {
+  font-size: 15px; }
+
+hr {
+  padding: 0px;
+  border: 1px dashed #00B7FF;
+  width: 70%;
+  margin: 40px auto; }
+
+p.toBlock {
+  width: 100%;
+  overflow-wrap: break-word; }
+
 /*# sourceMappingURL=style.css.map */
